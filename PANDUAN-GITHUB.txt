@@ -1,0 +1,16 @@
+SISTEM CARIAN SLIP PEPERIKSAAN - GITHUB PAGES
+
+1. Buka repository GitHub yang digunakan.
+2. Cari index.html di root repository (bukan dalam subfolder).
+3. Klik Edit (ikon pensel), gantikan keseluruhan kod dengan fail index.html baharu ini; atau padam fail lama dan upload fail index.html baharu.
+4. Commit changes ke branch yang diterbitkan (biasanya main).
+5. Settings > Pages: pastikan main / (root) dipilih.
+6. Reload paksa laman (Ctrl+Shift+R pada Windows atau Cmd+Shift+R pada Mac), atau cuba private/incognito window.
+7. Jika muncul paparan kosong, tekan 'Buka portal terus'.
+
+Web App:
+https://script.google.com/macros/s/AKfycbx2tdo7JxuVr47LVvBzeRv3kZxBTKCLwCl9-ytGCdXVs45UAD_goboNlbV_qfzIQyOs/exec
+
+PENTING: Google Apps Script perlu digunakan bersama Code.gs dan Index.html yang dipasang dan diterbitkan secara betul. Fungsi carian sebenar memerlukan akses Drive folder pemilik dan kebenaran Web App yang sesuai.
+
+PRIVASI: No. KP sahaja tidak mengesahkan identiti. Untuk slip peperiksaan yang sensitif, disyorkan menambah PIN unik atau pengesahan ibu bapa sebelum portal dibuka kepada umum.
