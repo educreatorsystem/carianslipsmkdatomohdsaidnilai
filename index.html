@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ms">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#102a50">
+  <meta name="description" content="Portal carian dan muat turun slip peperiksaan murid">
+  <title>Portal Carian Slip Peperiksaan</title>
+  <style>
+    *{box-sizing:border-box}html,body{height:100%;margin:0}body{font:15px system-ui,-apple-system,'Segoe UI',sans-serif;color:#173455;background:#edf4fc}
+    .bar{display:flex;align-items:center;gap:12px;min-height:64px;padding:12px 22px;background:linear-gradient(110deg,#102a50,#1b5595);color:#fff}
+    .icon{display:grid;place-items:center;width:38px;height:38px;border-radius:11px;background:#ffffff22;font-size:23px}
+    .name{font-weight:850;letter-spacing:.03em}.subtitle{font-size:12px;color:#dfecff;margin-top:4px}
+    .frame{display:block;width:100%;height:calc(100dvh - 64px);min-height:510px;border:0;background:#edf4fc}
+    .setup{display:none;min-height:calc(100dvh - 64px);padding:36px 18px;align-items:center;justify-content:center}
+    .card{width:min(100%,680px);background:#fff;border:1px solid #e0eafa;border-radius:20px;padding:28px;box-shadow:0 12px 42px #123a6315}
+    h1{font-size:25px;margin:0 0 12px}p{line-height:1.65;color:#536a82}code{overflow-wrap:anywhere;background:#edf4ff;border-radius:5px;padding:3px 5px}ol{padding-left:22px;line-height:2}a{color:#145aa4}
+    @media(max-width:600px){.bar{padding:10px 14px;min-height:60px}.frame{height:calc(100dvh - 60px)}.card{padding:22px}}
+  </style>
+</head>
+<body>
+  <header class="bar"><div class="icon" aria-hidden="true">📄</div><div><div class="name">PORTAL CARIAN SLIP PEPERIKSAAN</div><div class="subtitle">Semakan keputusan dan muat turun PDF</div></div></header>
+  <main id="setup" class="setup" role="status"><div class="card"><h1>Persediaan portal belum selesai</h1><p>Pentadbir perlu menampal URL Web App Google Apps Script ke dalam fail <code>index.html</code> sebelum menerbitkannya di GitHub.</p><ol><li>Deploy <code>Code.gs</code> dan <code>Index.html</code> dalam Google Apps Script.</li><li>Salin URL Web App yang berakhir dengan <code>/exec</code>.</li><li>Gantikan nilai <code>APPS_SCRIPT_URL</code> dalam <code>index.html</code> dengan URL tersebut.</li><li>Commit fail ke repositori GitHub dan aktifkan GitHub Pages.</li></ol><p>Baca fail <code>PANDUAN.txt</code> untuk langkah penuh.</p></div></main>
+  <iframe id="portal" class="frame" title="Sistem carian slip peperiksaan" allow="fullscreen" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  <script>
+    // GANTIKAN URL DI BAWAH DENGAN URL WEB APP ANDA (BERAKHIR /exec)
+    const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx2tdo7JxuVr47LVvBzeRv3kZxBTKCLwCl9-ytGCdXVs45UAD_goboNlbV_qfzIQyOs/exec';
+    const configured = /^https:\/\/script\.google\.com\/macros\/s\/[A-Za-z0-9_-]+\/exec(?:\?.*)?$/.test(APPS_SCRIPT_URL.trim());
+    document.getElementById('setup').style.display = configured ? 'none' : 'flex';
+    const portal = document.getElementById('portal');
+    if (configured) portal.src = APPS_SCRIPT_URL.trim();
+    else portal.style.display = 'none';
+  </script>
+</body>
+</html>
