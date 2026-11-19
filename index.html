@@ -1,15 +1,143 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ms">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#122f57">
-<title>Portal Carian Slip Peperiksaan</title>
-<style>
-*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,'Segoe UI',sans-serif;background:#eef4fb;color:#193858}.bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 18px;background:linear-gradient(115deg,#102b51,#1c5799);color:#fff;min-height:70px}.brand{display:flex;gap:11px;align-items:center}.logo{font-size:25px}.title{font-weight:800;font-size:16px}.sub{font-size:12px;opacity:.85;margin-top:3px}.open{border-radius:10px;padding:10px 14px;background:#fff;color:#154478;text-decoration:none;font-size:13px;font-weight:750;white-space:nowrap}iframe{display:block;width:100%;height:calc(100dvh - 70px);min-height:560px;border:0}.help{display:none;text-align:center;padding:24px 16px;font-size:14px;line-height:1.6}.help a{color:#125ca5;font-weight:700}@media(max-width:560px){.bar{flex-wrap:wrap;min-height:70px}.title{font-size:14px}.open{font-size:12px;padding:8px 10px}iframe{height:calc(100dvh - 110px)}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#142d55">
+  <title>Carian Slip Pencapaian Murid | SMK Dato' Mohd Said Nilai</title>
+  <style>
+    :root { color-scheme: light; --navy:#142d55;--blue:#2655a4;--muted:#65758d;--border:#dce4ef;--bg:#f3f6fb; }
+    *{box-sizing:border-box}body{margin:0;min-height:100vh;font-family:Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif;background:radial-gradient(circle at 10% 0%,#e2ebfb,transparent 40%),var(--bg);color:#182e48}
+    .top{background:linear-gradient(120deg,#10294e,#275ba6);padding:32px 18px 100px;color:white;text-align:center}
+    .logo{width:64px;height:64px;border-radius:20px;background:#ffffff22;margin:0 auto 14px;display:grid;place-items:center;font-size:34px;border:1px solid #ffffff55}
+    .top small{display:block;letter-spacing:1.6px;font-weight:700;opacity:.83;font-size:11px;margin-bottom:8px}
+    h1{font-size:clamp(22px,4vw,33px);line-height:1.2;margin:0 auto 8px;max-width:680px} .top p{margin:0;font-size:15px;opacity:.88}
+    main{max-width:790px;margin:-68px auto 48px;padding:0 18px}.panel{background:#fff;border:1px solid #e5ebf3;border-radius:22px;box-shadow:0 16px 55px #12294c16;padding:clamp(22px,5vw,38px)}
+    h2{font-size:19px;margin:0 0 10px}.sub{color:var(--muted);font-size:14px;line-height:1.6;margin:0 0 24px}label{display:block;font-weight:700;font-size:14px;margin-bottom:9px}
+    .formrow{display:flex;gap:10px}input{flex:1;min-width:0;border:1.5px solid var(--border);border-radius:12px;padding:15px;font:600 17px system-ui;letter-spacing:1px;outline:none}input:focus{border-color:#4385ec;box-shadow:0 0 0 3px #4385ec22}
+    button,.linkbtn{border:0;border-radius:12px;padding:14px 21px;background:var(--blue);color:white;cursor:pointer;font:700 14px system-ui;display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none}button:hover,.linkbtn:hover{background:#163e7f}button:disabled{opacity:.6;cursor:wait}
+    .hint{font-size:12px;color:var(--muted);margin:10px 0 0}.alert{display:none;margin-top:20px;border-radius:12px;padding:13px 15px;font-size:14px;line-height:1.5}.alert.show{display:block}.alert.error{background:#fff0f0;color:#943737;border:1px solid #f6cece}.alert.info{background:#eaf3ff;color:#1e4d87;border:1px solid #bed8fb}
+    .result{display:none;margin-top:26px;border-top:1px solid var(--border);padding-top:25px}.result.show{display:block}.resulthead{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.success{font-size:13px;font-weight:800;color:#168158}.filename{color:var(--muted);font-size:13px;margin:7px 0 16px;overflow-wrap:anywhere}.preview{height:min(69vh,700px);min-height:410px;border:1px solid var(--border);background:#eef2f8;border-radius:13px;overflow:hidden}.preview iframe{width:100%;height:100%;border:0}.download{background:#188366} .download:hover{background:#09654e}
+    footer{text-align:center;padding:0 18px 26px;font-size:12px;color:#74849a;line-height:1.6}
+    @media(max-width:540px){.formrow{flex-direction:column}.formrow button{width:100%}.preview{min-height:440px;height:60vh}.resulthead .linkbtn{width:100%}}
+  </style>
 </head>
 <body>
-<header class="bar"><div class="brand"><span class="logo">📄</span><div><div class="title">PORTAL CARIAN SLIP PEPERIKSAAN</div><div class="sub">Semakan dan muat turun PDF murid</div></div></div><a class="open" id="direct" target="_blank" rel="noopener noreferrer" href="https://script.google.com/macros/s/AKfycbx2tdo7JxuVr47LVvBzeRv3kZxBTKCLwCl9-ytGCdXVs45UAD_goboNlbV_qfzIQyOs/exec">Buka portal terus ↗</a></header>
-<iframe title="Sistem carian slip peperiksaan" src="https://script.google.com/macros/s/AKfycbx2tdo7JxuVr47LVvBzeRv3kZxBTKCLwCl9-ytGCdXVs45UAD_goboNlbV_qfzIQyOs/exec" referrerpolicy="strict-origin-when-cross-origin" allow="fullscreen"></iframe>
-<div class="help">Jika paparan kosong atau tidak boleh dibuka dalam GitHub, gunakan pautan <a href="https://script.google.com/macros/s/AKfycbx2tdo7JxuVr47LVvBzeRv3kZxBTKCLwCl9-ytGCdXVs45UAD_goboNlbV_qfzIQyOs/exec" target="_blank" rel="noopener noreferrer">buka portal secara terus</a>.</div>
-</body></html>
+  <header class="top">
+    <div class="logo" aria-hidden="true">🎓</div>
+    <small>SISTEM SEMAKAN DALAM TALIAN</small>
+    <h1>Carian Slip Pencapaian Murid</h1>
+    <p>SEKOLAH MENENGAH KEBANGSAAN DATO' MOHD SAID NILAI</p>
+  </header>
+  <main>
+    <section class="panel">
+      <h2>Semak slip pencapaian</h2>
+      <p class="sub">Masukkan nombor kad pengenalan murid untuk melihat slip PDF yang disediakan oleh pihak sekolah. Slip yang ditemui boleh dipaparkan dan dimuat turun.</p>
+      <form id="searchForm">
+        <label for="ic">Nombor Kad Pengenalan Murid</label>
+        <div class="formrow">
+          <input id="ic" name="ic" type="text" inputmode="numeric" pattern="[0-9]{12}" maxlength="14" autocomplete="off" placeholder="Contoh: 120101011234" required aria-describedby="hint">
+          <button id="searchBtn" type="submit">🔎 Cari Slip</button>
+        </div>
+        <p class="hint" id="hint">12 digit, tanpa sempang. Nombor dengan sempang juga diterima.</p>
+      </form>
+      <div id="alert" class="alert" role="status" aria-live="polite"></div>
+      <section id="result" class="result" aria-label="Hasil carian slip">
+        <div class="resulthead"><span class="success">✓ Slip berjaya dijumpai</span><a id="download" class="linkbtn download" href="#" download>⬇ Muat Turun PDF</a></div>
+        <p id="filename" class="filename"></p>
+        <div class="preview"><iframe id="pdfViewer" title="Paparan slip pencapaian murid"></iframe></div>
+        <p class="hint">Jika paparan PDF tidak disokong pada peranti anda, klik butang Muat Turun PDF.</p>
+      </section>
+    </section>
+  </main>
+  <footer>© <span id="year"></span> SMK Dato' Mohd Said Nilai · Untuk kegunaan pemilik slip yang dibenarkan sahaja.</footer>
+  <script>
+    'use strict';
+    // GANTIKAN DENGAN URL WEB APP APPS SCRIPT yang tamat dengan /exec
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx5WlC4r0y64EiSoJDAWdiOGRwfCHmJl8ch574xaDQckEY5iNFen-SjQZz8VII_87gg/exec';
+    const form = document.getElementById('searchForm');
+    const icInput = document.getElementById('ic');
+    const searchBtn = document.getElementById('searchBtn');
+    const alertEl = document.getElementById('alert');
+    const resultEl = document.getElementById('result');
+    const viewer = document.getElementById('pdfViewer');
+    const download = document.getElementById('download');
+    const filenameEl = document.getElementById('filename');
+    let currentBlobUrl = null;
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function message(text, type = 'error') {
+      alertEl.textContent = text;
+      alertEl.className = 'alert show ' + type;
+    }
+    function resetResult() {
+      resultEl.classList.remove('show');
+      viewer.removeAttribute('src');
+      download.removeAttribute('href');
+      if (currentBlobUrl) { URL.revokeObjectURL(currentBlobUrl); currentBlobUrl = null; }
+    }
+    function setBusy(busy) {
+      searchBtn.disabled = busy;
+      searchBtn.textContent = busy ? 'Mencari slip…' : '🔎 Cari Slip';
+    }
+    function jsonp(url, params, timeoutMs = 35000) {
+      return new Promise((resolve, reject) => {
+        const cb = 'slipCb_' + Date.now() + '_' + Math.floor(Math.random()*100000);
+        const tag = document.createElement('script');
+        let settled = false;
+        const timer = setTimeout(() => finish(new Error('Sambungan tamat masa. Cuba lagi.')), timeoutMs);
+        function finish(err, data) {
+          if (settled) return;
+          settled = true;
+          clearTimeout(timer);
+          delete window[cb];
+          tag.remove();
+          err ? reject(err) : resolve(data);
+        }
+        window[cb] = data => finish(null, data);
+        tag.onerror = () => finish(new Error('Tidak dapat menghubungi Apps Script. Semak URL dan tetapan deployment.'));
+        const q = new URLSearchParams({ ...params, callback: cb, t: String(Date.now()) });
+        tag.src = url + (url.includes('?') ? '&' : '?') + q.toString();
+        document.body.appendChild(tag);
+      });
+    }
+    function base64ToBlob(base64, contentType) {
+      const binary = atob(base64);
+      const bytes = new Uint8Array(binary.length);
+      for (let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
+      return new Blob([bytes], {type: contentType});
+    }
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
+      resetResult();
+      alertEl.className = 'alert';
+      const ic = icInput.value.replace(/[\s-]/g, '');
+      if (!/^\d{12}$/.test(ic)) {
+        message('Sila masukkan nombor kad pengenalan 12 digit.'); return;
+      }
+      if (!/^https:\/\/script\.google\.com\/macros\/s\/.+\/exec(?:\?.*)?$/.test(SCRIPT_URL)) {
+        message('Sistem belum dikonfigurasi. Pentadbir perlu memasukkan URL Web App Apps Script dalam fail index.html.'); return;
+      }
+      setBusy(true);
+      message('Sedang mendapatkan slip daripada Google Drive…', 'info');
+      try {
+        const data = await jsonp(SCRIPT_URL, {action:'search', ic});
+        if (!data || !data.ok) throw new Error((data && data.message) || 'Slip tidak dapat diperoleh.');
+        if (!data.base64 || data.mimeType !== 'application/pdf') throw new Error('Respons fail tidak sah.');
+        const blob = base64ToBlob(data.base64, data.mimeType);
+        currentBlobUrl = URL.createObjectURL(blob);
+        viewer.src = currentBlobUrl;
+        filenameEl.textContent = data.filename || ic + '.pdf';
+        download.href = currentBlobUrl;
+        download.download = ic + '.pdf';
+        resultEl.classList.add('show');
+        alertEl.className = 'alert';
+      } catch (err) {
+        message(err.message || 'Ralat tidak dijangka. Cuba lagi.');
+      } finally {
+        setBusy(false);
+      }
+    });
+  </script>
+</body>
+</html>
