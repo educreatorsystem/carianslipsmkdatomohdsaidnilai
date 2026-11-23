@@ -36,13 +36,10 @@ LANGKAH A - APPS SCRIPT
    Untuk perubahan kod kemudian: Deploy > Manage deployments > Edit > New version.
 
 LANGKAH B - GITHUB PAGES
-1. Buka index.html dalam text editor.
-2. Cari baris:
-   const SCRIPT_URL = 'PASTE_URL_APPS_SCRIPT_DI_SINI';
-3. Ganti teks PASTE_URL_APPS_SCRIPT_DI_SINI dengan URL /exec Apps Script.
-4. GitHub > New repository > Upload index.html ke root folder.
-5. Settings > Pages > Deploy from a branch > main > /(root) > Save.
-6. Akses URL GitHub Pages setelah tapak diterbitkan.
+1. URL Apps Script yang diberikan telah dipasang secara automatik dalam index.html.
+2. GitHub > Repository > Upload index.html ke root folder.
+3. Settings > Pages > Deploy from a branch > main > /(root) > Save.
+4. Akses URL GitHub Pages selepas laman diterbitkan.
 
 CARA UJI
 - Sediakan dua PDF contoh dalam folder dengan nombor KP DUMMY (bukan KP sebenar):
@@ -65,3 +62,8 @@ Nombor kad pengenalan BUKAN kata laluan. Sesiapa yang mengetahui KP boleh mendap
 slip jika aplikasi dibuka untuk umum. Kelulusan pentadbir sekolah dan pematuhan
 polisi perlindungan data diperlukan sebelum digunakan dengan data murid sebenar.
 Untuk keselamatan yang lebih baik, tambah PIN unik ibu bapa / murid atau login.
+
+URL APPS SCRIPT YANG DIPASANG
+https://script.google.com/macros/s/AKfycbx2tdo7JxuVr47LVvBzeRv3kZxBTKCLwCl9-ytGCdXVs45UAD_goboNlbV_qfzIQyOs/exec
+
+NOTA: Jika Code.gs terkini belum dipasang di Apps Script, salin dahulu Code.gs dalam pakej dan deploy versi baharu.
